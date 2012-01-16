@@ -1,0 +1,42 @@
+#### OSX ####
+.DS_Store
+.DS_Store?
+Icon?
+
+# Thumbnails
+._*
+
+# ack & vim swap files
+.ackrc
+*.swp
+
+
+#### TextMate ####
+*.tmproj
+tmtags
+
+
+#### Rails #####
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/db/*.sqlite3
+db/schema.rb
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+database.yml
+coverage.data
+
+### RVM ###
+.rvmrc
+
+### Rubymine ###
+.idea
