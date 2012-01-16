@@ -16,5 +16,31 @@
 </p>
 
 
+<table>
+  <tr>
+    <th>Preview</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Tags</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @album.pictures.each do |picture| %>
+  <tr>
+    <td><%= link_to(image_tag(picture.photo.url(:thumb)), album_picture_path(@album, picture)) %></td>
+    <td><%= picture.name %></td>
+    <td><%= picture.description %></td>
+    <td><%= picture.tags %></td>
+    <td><%= link_to 'Edit', edit_album_picture_path(@album, picture) %></td>
+    <td><%= link_to 'Destroy', album_picture_path(@album, picture), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New picture', new_album_picture_path(@album) %>
+<hr />
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>

@@ -1,8 +1,8 @@
-class AlbumsController < ApplicationController
+class AlbumsController < ProtectedController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = current_user.albums.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
-    @album = Album.find(params[:id])
+    @album = current_user.albums.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class AlbumsController < ApplicationController
   # GET /albums/new
   # GET /albums/new.json
   def new
-    @album = Album.new
+    @album = current_user.albums.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class AlbumsController < ApplicationController
 
   # GET /albums/1/edit
   def edit
-    @album = Album.find(params[:id])
+    @album = current_user.albums.find(params[:id])
   end
 
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(params[:album])
+    @album = current_user.albums.build(params[:album])
 
     respond_to do |format|
       if @album.save
@@ -56,7 +56,7 @@ class AlbumsController < ApplicationController
   # PUT /albums/1
   # PUT /albums/1.json
   def update
-    @album = Album.find(params[:id])
+    @album = current_user.albums.find(params[:id])
 
     respond_to do |format|
       if @album.update_attributes(params[:album])
@@ -72,7 +72,7 @@ class AlbumsController < ApplicationController
   # DELETE /albums/1
   # DELETE /albums/1.json
   def destroy
-    @album = Album.find(params[:id])
+    @album = current_user.albums.find(params[:id])
     @album.destroy
 
     respond_to do |format|

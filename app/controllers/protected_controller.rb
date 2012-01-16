@@ -6,10 +6,9 @@
 # 
 
 
-class HomeController < ApplicationController
+class ProtectedController < ApplicationController
 
-  def index
+  before_filter :authenticate_user!
 
-  end
 
 end
