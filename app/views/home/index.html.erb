@@ -6,6 +6,9 @@
 
 <hr />
 
-Bouh :)
-
+<% if user_signed_in? %>
+  <%=  link_to 'Albums', albums_path %>
+<% else %>
+  Derpy derp o_O
+<% end %>
 
