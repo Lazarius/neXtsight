@@ -8,6 +8,8 @@ gem 'rails', '3.1.3'
 gem 'mysql2',       '~> 0.3.10'
 gem 'devise',        '~> 1.5.0'
 gem 'paperclip',    '~> 2.0'
+gem 'rabl'
+gem 'yajl-ruby'
 
 
 # Gems used only for assets and not required

@@ -17,8 +17,8 @@ class PicturesController < DocumentsController
     @picture = album.pictures.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @picture }
+      format.html { }
+      format.json { }
     end
   end
 
